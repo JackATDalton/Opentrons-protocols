@@ -13,5 +13,5 @@ requirements = {
 
 def run(protocol: protocol_api.ProtocolContext):
     temp_module = protocol.load_module("temperature module gen2", "D1")
-    temp_module.set_temperature(5)
+    temp_module.set_temperature(celsius=5)
    
