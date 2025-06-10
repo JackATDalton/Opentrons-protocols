@@ -1,7 +1,7 @@
 from opentrons import protocol_api
 metadata = {
-    "protocolName": "Heatblock Heating Test",
-    "description": "A simple protocol to test the heatblock setup and prewarm it for experiments.",
+    "protocolName": "Heatblock Cooling Test",
+    "description": "A simple protocol to test the heatblock setup and precool it for experiments.",
     "author": "JATD"
 }
 
@@ -13,5 +13,5 @@ requirements = {
 
 def run(protocol: protocol_api.ProtocolContext):
     temp_module = protocol.load_module("temperature module gen2", "D1")
-    temp_module.set_temperature(42)
+    temp_module.set_temperature(5)
    
