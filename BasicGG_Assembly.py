@@ -16,7 +16,7 @@ def run(protocol: protocol_api.ProtocolContext):
     trash = protocol.load_trash_bin(location="A3")
     # Load the thermocycler module
     tc_mod = protocol.load_module(module_name="thermocyclerModuleV2")
-
+    plate = tc_mod.load_labware(name="opentrons_96_wellplate_200ul_pcr_full_skirt")
     left_pipette = protocol.load_instrument(
         "flex_1channel_50",
         mount="left",
