@@ -25,7 +25,7 @@ def run(protocol: protocol_api.ProtocolContext):
     cells = protocol.load_labware("opentrons_24_tuberack_nest_1.5ml_screwcap", "B2")
     VacManifold = protocol.load_labware('jdvacuum_24_tuberack_500ul', 'B3')
     buffers = protocol.load_labware('jd_6_falconrack_50ml', 'C2')
-    elution_tubes = protocol.load_labware('opentrons_24_tuberack_nest_1.5ml_screwcap', 'C3')
+    elution_tubes = protocol.load_labware('opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap', 'C3')
 
     ### 1. Lyse cells by resuspending in 250ul Lysis buffer ### 
     for i in range(24):
