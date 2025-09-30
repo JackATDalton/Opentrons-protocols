@@ -22,7 +22,7 @@ def run(protocol: protocol_api.ProtocolContext):
     )
 
     # define reagents and labware 
-    cells = protocol.load_labware("opentrons_24_tuberack_nest_1.5ml_screwcap", "B2")
+    cells = protocol.load_labware("nest_24_wellplate_10.4ml", "B2")
     VacManifold = protocol.load_labware('jdvacuum_24_tuberack_500ul', 'B3')
     buffers = protocol.load_labware('jd_6_falconrack_50ml', 'C2')
     elution_tubes = protocol.load_labware('opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap', 'C3')
