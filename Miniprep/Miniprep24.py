@@ -1,7 +1,7 @@
 from opentrons import protocol_api
 metadata = {
     'protocolName': 'Vacuum miniprep 24 samples',
-    'description': 'Miniprep 24 samples using 3D printed vacuum manifold. Start with spun down cells in 2ml tubes.',
+    'description': 'Miniprep 24 samples using 3D printed vacuum manifold. Start with spun down cells in a deep 24 well plate.',
     'author': 'JATD'
     }
 
@@ -36,13 +36,20 @@ def run(protocol: protocol_api.ProtocolContext):
             new_tip="once",
             mix_after=(5, 45)
         )
-    
+        left_pipette.transfer(
+            250,
+            buffers["A2"], 
+            cells.wells()[i],
+            new_tip="once",
+            mix_after=(5, 45)
+        )
+
 
     ### 2. Neutralize by adding 350ul Neutralisation buffer ###
     for i in range(24):
         left_pipette.transfer(
             350,
-            buffers["A2"], 
+            buffers["A3"], 
             cells.wells()[i],
             new_tip="once",
             mix_after=(5, 45)
@@ -56,7 +63,7 @@ def run(protocol: protocol_api.ProtocolContext):
     for i in range(24):
         left_pipette.transfer(
             500,
-            buffers["A3"], 
+            buffers["B1"], 
             cells.wells()[i].top(3),
             new_tip="never",
         )
@@ -72,7 +79,7 @@ def run(protocol: protocol_api.ProtocolContext):
 
     left_pipette.distribute(
             50,
-            buffers["B1"], 
+            buffers["B2"], 
             VacManifold.wells(),
         )
     # End of protocol
