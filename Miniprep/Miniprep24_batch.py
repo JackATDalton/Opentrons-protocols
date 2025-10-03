@@ -57,7 +57,6 @@ def run(protocol: protocol_api.ProtocolContext):
                 buffers["A3"].bottom(3) , 
                 well.top(0),
                 new_tip="never", 
-                blow_out=True
             )
             left_pipette.mix(3, 45, well)
             left_pipette.drop_tip()
