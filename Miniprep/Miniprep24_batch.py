@@ -1,7 +1,7 @@
 from opentrons import protocol_api
 metadata = {
     'protocolName': 'Vacuum miniprep 24 samples',
-    'description': 'Miniprep 24 samples using 3D printed vacuum manifold. Start with resuspended cells in a deep 24 well plate.',
+    'description': 'Miniprep 24 samples using 3D printed vacuum manifold. Start with resuspended cells in 2ml tubes.',
     'author': 'JATD'
     }
 
@@ -22,10 +22,10 @@ def run(protocol: protocol_api.ProtocolContext):
     )
 
     # define reagents and labware 
-    cells = protocol.load_labware("nest_24_wellplate_10.4ml", "B2")
+    cells = protocol.load_labware("jd_24_tuberack_1.5ml", "B2")
     VacManifold = protocol.load_labware('jdvacuum_24_tuberack_500ul', 'B3')
     buffers = protocol.load_labware('jd_6_falconrack_50ml', 'C2')
-    elution_tubes = protocol.load_labware('opentrons_24_tuberack_eppendorf_1.5ml_safelock_snapcap', 'C3')
+    elution_tubes = protocol.load_labware('jd_24_tuberack_1.5ml', 'C3')
 
     ### Process each column: Lyse then Neutralize before moving to next column ###
     # Process in batches of 4 wells (one column at a time)
