@@ -54,7 +54,7 @@ def run(protocol: protocol_api.ProtocolContext):
             left_pipette.pick_up_tip()
             left_pipette.transfer(
                 350,
-                buffers["A3"].bottom(3) , 
+                buffers["A2"].bottom(3) , 
                 well.top(0),
                 new_tip="never", 
             )
@@ -69,14 +69,14 @@ def run(protocol: protocol_api.ProtocolContext):
     for i in range(24):
         left_pipette.transfer(
             500,
-            buffers["B1"].bottom(3) , 
+            buffers["A3"].bottom(3) , 
             VacManifold.wells()[i].top(1),
             new_tip="never",
         )
     for i in range(24):
         left_pipette.transfer(
             500,
-            buffers["B1"].bottom(3) , 
+            buffers["A3"].bottom(3) , 
             VacManifold.wells()[i].top(1),
             new_tip="never",
         )
@@ -87,7 +87,7 @@ def run(protocol: protocol_api.ProtocolContext):
     for i in range(24):
         left_pipette.transfer(
             50,
-            buffers["B2"].bottom(3) , 
+            buffers["B1"].bottom(3) , 
             elution_tubes.wells()[i].top(),
             new_tip="never"
         )
